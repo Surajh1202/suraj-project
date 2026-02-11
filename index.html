@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Radha 🎉💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 90%;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .birthday-emoji {
+            font-size: 60px;
+            animation: bounce 1s infinite;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #764ba2;
+            margin: 20px 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .countdown {
+            margin: 40px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .countdown-title {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            min-width: 70px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .time-value {
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .time-label {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-emoji {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .button-group {
+            margin: 40px 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #764ba2;
+            border: 2px solid #764ba2;
+        }
+
+        .btn-secondary:hover {
+            background: #764ba2;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .heart {
+            color: #ff1744;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.3);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        /* Confetti animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .message {
+                font-size: 1em;
+            }
+
+            .countdown-timer {
+                gap: 10px;
+            }
+
+            .time-box {
+                min-width: 60px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="header">
+            <div>
+                <span class="birthday-emoji">🎂</span>
+                <span class="birthday-emoji">🎉</span>
+                <span class="birthday-emoji">🎈</span>
+            </div>
+            <h1>Happy Birthday</h1>
+            <h1 style="color: #ff1744; margin-top: 10px;">Radha! 💕</h1>
+            <p class="subtitle">Your Special Day Has Arrived!</p>
+        </div>
+
+        <div class="message">
+            <p>
+                On this beautiful day, we celebrate you and all the joy you bring into the world. 
+                Your smile, your kindness, and your amazing spirit make every moment special. 
+                May this year bring you endless happiness, wonderful adventures, and all the love you deserve. 
+                <span class="heart">❤️</span>
+            </p>
+        </div>
+
+        <div class="countdown">
+            <div class="countdown-title">🎊 Celebration Timer 🎊</div>
+            <div class="countdown-timer">
+                <div class="time-box">
+                    <div class="time-value" id="days">0</div>
+                    <div class="time-label">Days</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-value" id="hours">0</div>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-value" id="minutes">0</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-value" id="seconds">0</div>
+                    <div class="time-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-emoji">🌟</div>
+                <div class="feature-text">Shine Bright</div>
+            </div>
+            <div class="feature">
+                <div class="feature-emoji">💖</div>
+                <div class="feature-text">Full of Love</div>
+            </div>
+            <div class="feature">
+                <div class="feature-emoji">🎯</div>
+                <div class="feature-text">Dream Big</div>
+            </div>
+            <div class="feature">
+                <div class="feature-emoji">🌈</div>
+                <div class="feature-text">Colorful Life</div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="playMusic()">🎵 Play Celebration Music</button>
+            <button class="btn btn-secondary" onclick="createConfetti()">🎊 Celebrate!</button>
+        </div>
+
+        <div class="footer">
+            <p>Made with <span class="heart">❤️</span> for someone special</p>
+            <p style="margin-top: 10px; color: #764ba2; font-weight: 600;">Wishing you the happiest of birthdays!</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set the target date to today at midnight (birthday celebration all day)
+            const today = new Date();
+            const targetDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59);
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) {
+                    document.getElementById('days').textContent = '0';
+                    document.getElementById('hours').textContent = '0';
+                    document.getElementById('minutes').textContent = '0';
+                    document.getElementById('seconds').textContent = '0';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Confetti animation
+        function createConfetti() {
+            const colors = ['#667eea', '#764ba2', '#ff1744', '#ffd700', '#00bcd4'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animation = `fall ${Math.random() * 2 + 2}s linear forwards`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Add CSS animation for confetti
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Play celebration music (using Web Audio API for a simple tune)
+        function playMusic() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const notes = [
+                { freq: 523.25, duration: 0.3 }, // C5
+                { freq: 659.25, duration: 0.3 }, // E5
+                { freq: 783.99, duration: 0.3 }, // G5
+                { freq: 1046.50, duration: 0.6 }, // C6
+            ];
+
+            let currentTime = audioContext.currentTime;
+
+            notes.forEach(note => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = note.freq;
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0.3, currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, currentTime + note.duration);
+
+                oscillator.start(currentTime);
+                oscillator.stop(currentTime + note.duration);
+
+                currentTime += note.duration;
+            });
+
+            // Trigger confetti when music plays
+            createConfetti();
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            createParticles();
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>
